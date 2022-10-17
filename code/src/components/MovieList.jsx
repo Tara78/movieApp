@@ -15,8 +15,8 @@ export const MovieList = ({ list }) => {
           >
             <div className="overlay">
               <h2>{movie.title}</h2>
-              <p>{movie.vote_count}</p>
-              <p>{movie.release_date}</p>
+              <h5>Voted:{movie.vote_count}</h5>
+              <h5>Release Date: {movie.release_date}</h5>
             </div>
           </div>
         </Link>

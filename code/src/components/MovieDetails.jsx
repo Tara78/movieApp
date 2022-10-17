@@ -23,7 +23,7 @@ const MovieDetails = () => {
 
   return (
     <section
-      className="detail-container"
+      className="details-container"
       style={{
         backgroundImage: `url(https://image.tmdb.org/t/p/w1280/${details.backdrop_path})`,
       }}
@@ -33,11 +33,16 @@ const MovieDetails = () => {
         className="go-back-btn"
         onClick={returnToDefaultPage}
       >
-        <span className="go-back-home">«</span>Go Back -
-        movie details page
+        <span className="go-back-home">«</span>Go back 
       </button>
-      <div>
-        <p>{details.overview}</p>
+      <div className="movie-field">
+        <img className="poster-image" 
+        src={`https://image.tmdb.org/t/p/w342/${details.poster_path}`} alt="movie poster" />
+        
+        <div className="movie-field-text">
+          <h1 className="movie-title">{details.title} <span className="rating">⭐️ {details.vote_average?.toFixed(1)}</span></h1>
+          <p className="movie-desc">{details.overview}</p>
+        </div>
       </div>
     </section>
   );
